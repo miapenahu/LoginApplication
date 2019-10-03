@@ -5,6 +5,10 @@
  */
 package Frontera;
 
+import Entidad.Sistema;
+import Entidad.Usuario;
+import java.util.ArrayList;
+
 /**
  *
  * @author Cisco
@@ -14,10 +18,15 @@ public class FramePrincipal extends javax.swing.JFrame {
     private Registro registro = new Registro();
     private Ingreso ingreso = new Ingreso();
     /**
-     * Creates new form FramePrincipal
+     * Creamos una variable de clase.
+     * Nacesitamos importar Entidad.Sistema
      */
+    
+    public static Sistema sistema = new Sistema();
+    
     public FramePrincipal() {
         initComponents();
+        inicializacion();
     }
 
     /**
@@ -149,6 +158,53 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
     }
 
+    public void inicializacion(){
+        
+        /*
+        * * Creamos el arreglo: Nacesitamos importar la clase
+        *   ArrayList y la clase entidad.Usuario
+        */
+        
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+    
+        /*
+        * Creamos los usuarios
+        */
+        
+        Usuario a = new Usuario();
+        Usuario b = new Usuario();
+        Usuario c = new Usuario();
+        /*
+        * Proveemos nombres y contraseñas
+        */
+        
+        a.setNombre("juan");
+        a.setPassword("1234");
+        b.setNombre("pedro");
+        b.setPassword("123");
+        c.setNombre("maria");
+        c.setPassword("12345");
+        
+        /*
+        * Agregamos al arreglo
+        */
+        
+        usuarios.add(a);
+        usuarios.add(b);
+        usuarios.add(c);
+        
+        /*
+        /* Le asignamos el arreglo usuarios a la variable de clase "sistema"
+        */
+        sistema.setUsuarios(usuarios);
+        
+        for(Usuario u: sistema.getUsuarios()){
+            System.out.println(u.getNombre());
+            System.out.println(u.getPassword());
+            System.out.println("------------");    
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ingresoB;
     private javax.swing.JPanel jPanel1;
