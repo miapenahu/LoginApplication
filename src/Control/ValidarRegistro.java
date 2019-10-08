@@ -11,29 +11,27 @@ import Frontera.FramePrincipal;
 
 /**
  *
- * @author Cisco
+ * @author Miguel Alejandro
  */
-public class ValidarLogin {
-
-    private Sistema sistema = FramePrincipal.sistema;
+public class ValidarRegistro {
+ 
+      private Sistema sistema = FramePrincipal.sistema;
+      
+      
+    public ValidarRegistro() {
+        }
     
-    public ValidarLogin() {
-    }
-    
-    public String verificarLogin (Usuario usuario){
+    public String verificarRegistro (Usuario usuario, String ValPassword){
         if (!verificarLongitudNombre(usuario.getNombre())){
             return("Longitud nombre incorrecta");
         }
         if (!verificarLongitudPassword(usuario.getPassword())){
             return("Longitud contraseña incorrecta");
         }
-        for(Usuario u: sistema.getUsuarios()){
-            if(u.getNombre().equals(usuario.getNombre()) 
-                && u.getPassword().equals(usuario.getPassword())){
-            return("Bienvenido");
-            }
+        if (!passwordsIguales(usuario.getPassword(), ValPassword)){
+            return("Las contraseñas no coinciden");
         }
-        return("Datos Incorrectos");
+        return("Registro exitoso");
     }
     
     public boolean verificarLongitudNombre (String nombre){
@@ -44,4 +42,7 @@ public class ValidarLogin {
         return (password.length() >= 3 && password.length() < 6);
     }
 
+    public boolean passwordsIguales (String password1, String password2){
+        return (password1.equals(password2));
+    }
 }
