@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  */
 public class TestLogin {
     
-     private static ValidarLogin validarLogin = new ValidarLogin();
+    private static ValidarLogin validarLogin = new ValidarLogin();
         
     private String LONG_NOMBRE_INCORRECTA = "Longitud nombre incorrecta";
     private String LONG_PASSWORD_INCORRECTA = "Longitud contraseña incorrecta";

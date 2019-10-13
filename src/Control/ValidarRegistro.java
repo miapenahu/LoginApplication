@@ -31,6 +31,9 @@ public class ValidarRegistro {
         if (!passwordsIguales(usuario.getPassword(), ValPassword)){
             return("Las contraseñas no coinciden");
         }
+        if (!nombreNuevo(usuario.getNombre())){
+            return("El usuario con el nombre ingresado ya existe");
+        }
         return("Registro exitoso");
     }
     
@@ -44,5 +47,15 @@ public class ValidarRegistro {
 
     public boolean passwordsIguales (String password1, String password2){
         return (password1.equals(password2));
+    }
+
+    public boolean nombreNuevo (String nombre){
+        boolean reg;
+        for(Usuario u : FramePrincipal.sistema.getUsuarios()){
+            reg = nombre.equals(u.getNombre());
+            if(reg == true) return false;
+        }
+        reg = true;
+        return reg;
     }
 }
