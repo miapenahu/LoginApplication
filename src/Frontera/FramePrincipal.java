@@ -26,7 +26,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     
     public FramePrincipal() {
         initComponents();
-        inicializacion();
+//        inicializacion();
     }
 
     /**
@@ -158,25 +158,25 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
     }
 
-    public void inicializacion(){
+/*    public void inicializacion(){
         
         /*
         * * Creamos el arreglo: Nacesitamos importar la clase
         *   ArrayList y la clase entidad.Usuario
-        */
+        
         
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     
         /*
         * Creamos los usuarios
-        */
+        
         
         Usuario a = new Usuario();
         Usuario b = new Usuario();
         Usuario c = new Usuario();
         /*
         * Proveemos nombres y contraseñas
-        */
+        
         
         a.setNombre("juan");
         a.setPassword("1234");
@@ -187,7 +187,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         
         /*
         * Agregamos al arreglo
-        */
+        
         
         usuarios.add(a);
         usuarios.add(b);
@@ -195,7 +195,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         
         /*
         /* Le asignamos el arreglo usuarios a la variable de clase "sistema"
-        */
+        
         sistema.setUsuarios(usuarios);
         
         for(Usuario u: sistema.getUsuarios()){
@@ -203,7 +203,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             System.out.println(u.getPassword());
             System.out.println("------------");    
         }
-    }
+    }*/
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ingresoB;
